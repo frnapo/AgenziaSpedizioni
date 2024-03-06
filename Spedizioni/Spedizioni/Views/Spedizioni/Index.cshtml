@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 class="text-center mt-4 fs-2">OPERAZIONI AMMINISTRATORE</h3>
+<div class="container">
+    <div class="row bg-white p-5 rounded-3 my-5 bg-opacity-75">
+        <div class="col-4">
+
+            <div class="card" style="width: 16rem;">
+                <img class="card-img-top" src="https://www.generixgroup.com/sites/default/files/styles/header_540_x_320_/public/2020-05/dhl.jpg.webp?itok=R1TDFy5B" alt="Card image cap">
+                <div class="card-body m-0 p-0">
+                    <h4 class="fs-6 badge bg-danger ps-2 text-white shadow-lg m-0 fw-bold border-0 rounded-0 w-100 border-danger border-2 border-bottom">Spedizioni in consegna oggi</h4>
+                    @Html.ActionLink("In Consegna", "SpedizioniOggi", "Spedizioni", new { area = "" }, new { @class = "btn btn-warning rounded-0 rounded-bottom fw-bold p-2 nav-link" })
+                </div>
+            </div>
+
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 16rem;">
+                <img class="card-img-top" src="https://www.generixgroup.com/sites/default/files/styles/header_540_x_320_/public/2020-05/dhl.jpg.webp?itok=R1TDFy5B" alt="Card image cap">
+                <div class="card-body m-0 p-0">
+                    <h4 class="fs-6 badge bg-danger ps-2 text-white shadow-lg m-0 fw-bold border-0 rounded-0 w-100 border-danger border-2 border-bottom">Spedizioni in attesa</h4>
+                    @Html.ActionLink("In Attesa", "SpedizioniInCorso", "Spedizioni", new { area = "" }, new { @class = "btn btn-warning rounded-0 rounded-bottom fw-bold p-2 nav-link" })
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 16rem;">
+                <img class="card-img-top" src="https://www.generixgroup.com/sites/default/files/styles/header_540_x_320_/public/2020-05/dhl.jpg.webp?itok=R1TDFy5B" alt="Card image cap">
+                <div class="card-body m-0 p-0">
+                    <h4 class="fs-6 badge bg-danger ps-2 text-white shadow-lg m-0 fw-bold border-0 rounded-0 w-100 border-danger border-2 border-bottom">Spedizioni per città</h4>
+                    @Html.ActionLink("Per Città", "SpedizioniPerCitta", "Spedizioni", new { area = "" }, new { @class = "btn btn-warning rounded-0 rounded-bottom fw-bold p-2 nav-link" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

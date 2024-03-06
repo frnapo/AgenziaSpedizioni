@@ -65,10 +65,7 @@
 
                 @if (User.IsInRole("admin"))
                 {
-                    <li>@Html.ActionLink("Spedizioni oggi", "SpedizioniOggi", "Spedizioni", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Spedizioni in corso", "SpedizioniInCorso", "Spedizioni", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Spedizioni per citta", "SpedizioniPerCitta", "Spedizioni", new { area = "" }, new { @class = "nav-link" })</li>
-
+                    <li>@Html.ActionLink("Operazioni amministratore", "Index", "Spedizioni", new { area = "" }, new { @class = "nav-link" })</li>
                 }
 
             </ul>
@@ -76,56 +73,56 @@
 
 
 
-                @if (Request.IsAuthenticated)
-                {
+            @if (Request.IsAuthenticated)
+            {
 
-                    <span>@Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "nav-link" })</span>
-                }
-                else
-                {
-                    <div class="navbar-nav ml-auto dropdown">
-                        <button class="btn rounded-0 text-black pb-1 nav-link bg-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Login
-                        </button>
-                        <div class="dropdown-menu custom-menu bg-white bg-opacity-75" aria-labelledby="dropdownMenuButton">
-                            <p class="dropdown-item">
-                                @model Spedizioni.Models.Utenti
-                                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
-                                {
-                                    @Html.AntiForgeryToken()
+                <span>@Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "nav-link" })</span>
+            }
+            else
+            {
+                <span>@Html.ActionLink("Login", "Login", "Home", new { area = "" }, new { @class = "nav-link" })</span>
+                @*<div class="navbar-nav ml-auto dropdown">
+                <button class="btn rounded-0 text-black pb-1 nav-link bg-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Login
+                </button>
+                <div class="dropdown-menu custom-menu bg-white bg-opacity-75" aria-labelledby="dropdownMenuButton">
+                    <p class="dropdown-item">
+                        @model Spedizioni.Models.Utenti
+                        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
 
-                                    <div class="row">
-                                        <h3 class="text-center m-0 p-0">LOGIN</h3>
-                                        <div class="col-1"></div>
-                                        <div class="col-10">
-                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                            <div class="form-group mb-3 mt-3">
-                                                @Html.LabelFor(model => model.NomeUtente, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.NomeUtente, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.NomeUtente, "", new { @class = "text-danger" })
-                                            </div>
-
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                                            </div>
-                                            <input type="submit" value="Login" class="btn btn-success rounded-0 rounded-end p-2 " />
-                                            <p class="text-danger mt-3 fs-4">@TempData["Message2"]</p>
-                                        </div>
-                                        <div class="col-1"></div>
+                            <div class="row">
+                                <h3 class="text-center m-0 p-0">LOGIN</h3>
+                                <div class="col-1"></div>
+                                <div class="col-10">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group mb-3 mt-3">
+                                        @Html.LabelFor(model => model.NomeUtente, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.NomeUtente, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NomeUtente, "", new { @class = "text-danger" })
                                     </div>
-                                }
-                            </p>
-                        </div>
-                    </div>
-                }
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                    <input type="submit" value="Login" class="btn btn-success rounded-0 rounded-end p-2 " />
+                                    <p class="text-danger mt-3 fs-4">@TempData["Message2"]</p>
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
+                        }
+                    </p>
                 </div>
+            </div>*@
+            }
+        </div>
             </nav>
 
     @RenderBody()
     <footer>
-        <p>&copy; @DateTime.Now.Year - Applicazione ASP.NET</p>
     </footer>
 
 

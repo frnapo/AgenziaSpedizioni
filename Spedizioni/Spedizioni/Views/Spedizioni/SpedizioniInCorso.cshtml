@@ -4,96 +4,95 @@
     ViewBag.Title = "SpedizioniInCorso";
 }
 
-<h2>SpedizioniInCorso</h2>
+<h3 class="text-center mt-4 fs-2">SPEDIZIONI IN ATTESA</h3>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IdSpedizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdCliente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codTracciamento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dataSpedizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pesoSpedizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cittaDestinazione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indirizzoDestinazione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nominativoDestinatario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.costoSpedizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dataConsegna)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdStatoSpedizione)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdSpedizione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdCliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codTracciamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataSpedizione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pesoSpedizione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cittaDestinazione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.indirizzoDestinazione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nominativoDestinatario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.costoSpedizione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataConsegna)
-        </td>
-        <td>
-            @if (item.IdStatoSpedizione == 1)
-            {
-                <text>Partita</text>
-            }
-            else 
-            {
-                <text>In consegna</text>
-            }
-        </td>
-        <td>
-            @Html.ActionLink("In Consegna", "InConsegna", new { id = item.IdSpedizione })
-            @Html.ActionLink("Consegnato", "Consegnato", new { id = item.IdSpedizione })
-        </td>
-    </tr>
-}
+    <table class="table bg-black bg-opacity-75 border-0 shadow rounded-5 text-white bg-gradient">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Tracking
+            </th>
+            <th>
+                Data spedizione
+            </th>
+            <th>
+                Peso
+            </th>
+            <th>
+                Citta destinazione
+            </th>
+            <th>
+                Indirizzo
+            </th>
+            <th>
+                Destinatario
+            </th>
+            <th>
+                Costo
+            </th>
+            <th>
+                Consegna prevista
+            </th>
+            <th>
+                Stato spedizione
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdSpedizione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codTracciamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dataSpedizione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pesoSpedizione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cittaDestinazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.indirizzoDestinazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nominativoDestinatario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.costoSpedizione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dataConsegna)
+                </td>
+                <td>
+                    @if (item.IdStatoSpedizione == 1)
+                    {
+                        <text>Partita</text>
+                    }
+                    else
+                    {
+                        <text>In consegna</text>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("In Consegna", "InConsegna", new { id = item.IdSpedizione }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Consegnato", "Consegnato", new { id = item.IdSpedizione }, new { @class = "btn btn-success" })
+                </td>
+            </tr>
+        }
+
+    </table>

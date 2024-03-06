@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<Spedizioni.Models.Spedizioni>
 
 @{
-    ViewBag.Title = "SpedizioniOggi";
+    ViewBag.Title = "VisualizzaSpedizioni";
 }
 
-<h3 class="text-center mt-4 fs-2">SPEDIZIONI IN CONSEGNA OGGI</h3>
+<h3 class="text-center mt-4 fs-2">VISUALIZZA TUTTE LE SPEDIZIONI</h3>
 
-<table class="table bg-white bg-opacity-75">
+<table class="table bg-black bg-opacity-75 border-0 shadow rounded-5 text-white bg-gradient">
     <tr>
         <th>
-            Spedizione
+            ID
         </th>
         <th>
             Cliente
@@ -24,7 +24,7 @@
             Peso
         </th>
         <th>
-            Citta destinazione
+            Citta Destinazione
         </th>
         <th>
             Indirizzo
@@ -35,7 +35,12 @@
         <th>
             Costo
         </th>
-        <th></th>
+        <th>
+            Data consegna
+        </th>
+        <th>
+            Stato spedizione
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -67,6 +72,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.costoSpedizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataConsegna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdStatoSpedizione)
             </td>
         </tr>
     }

@@ -4,101 +4,97 @@
     ViewBag.Title = "InserisciSpedizione";
 }
 
-<h2>InserisciSpedizione</h2>
+<h3 class="text-center mt-4 fs-2">CREA NUOVA SPEDIZIONE</h3>
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Spedizioni</h4>
-        <hr />
+
+<div class="container">
+
+    <div class="form-horizontal fs-5 my-2 bg-white p-3 bg-opacity-50 rounded-3">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.IdCliente, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group fs-5 my-2">
+            Cliente
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.IdCliente, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.IdCliente, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.codTracciamento, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group fs-5 my-2">
+            Crea codice tracking(12 caratteri)
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.codTracciamento, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.codTracciamento, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.dataSpedizione, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group fs-5 my-2">
+            Data Spedizione
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.dataSpedizione, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.dataSpedizione, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.pesoSpedizione, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group fs-5 my-2">
+            Peso Spedizione
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.pesoSpedizione, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.pesoSpedizione, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.cittaDestinazione, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group fs-5 my-2">
+            Citta di destinazione
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.cittaDestinazione, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.cittaDestinazione, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.indirizzoDestinazione, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group fs-5 my-2">
+            Indirizzo di destinazione
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.indirizzoDestinazione, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.indirizzoDestinazione, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.nominativoDestinatario, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group fs-5 my-2">
+            Nominativo destinatario
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.nominativoDestinatario, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.nominativoDestinatario, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.costoSpedizione, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group fs-5 my-2">
+            Costo spedizione
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.costoSpedizione, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.costoSpedizione, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.dataConsegna, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="form-group fs-5 my-2">
+            Data prevista di consegna
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.dataConsegna, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.dataConsegna, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+        <div class="form-group col-md-10 w-100">
+            <input type="submit" value="Inserisci spedizione" class="btn btn-warning w-100 mt-3 fw-bold fs-5 nav-link p-2" />
         </div>
     </div>
+</div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
