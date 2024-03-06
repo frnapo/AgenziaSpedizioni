@@ -21,7 +21,7 @@ namespace Spedizioni.Controllers
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Spedizioni"].ConnectionString.ToString();
             SqlConnection conn = new SqlConnection(connectionString);
-            List<Spedizioni.Models.Spedizioni> spedizioni = new List<Spedizioni.Models.Spedizioni>();
+            List<Models.Spedizioni> spedizioni = new List<Models.Spedizioni>();
             try
             {
                 conn.Open();
@@ -32,7 +32,7 @@ namespace Spedizioni.Controllers
 
                 while (dr.Read())
                 {
-                    Spedizioni.Models.Spedizioni s = new Spedizioni.Models.Spedizioni();
+                    Models.Spedizioni s = new Models.Spedizioni();
                     s.IdSpedizione = Convert.ToInt32(dr["IdSpedizione"]);
                     s.IdCliente = Convert.ToInt32(dr["FK_IdCliente"]);
                     s.codTracciamento = dr["codTracciamento"].ToString();

@@ -44,6 +44,7 @@ namespace Spedizioni.Controllers
                     }
                     else
                     {
+                        TempData["Message2"] = "Username o password errati";
                         ViewBag.Message = "Username o password errati";
                         return View();
                     }
@@ -51,8 +52,6 @@ namespace Spedizioni.Controllers
                 catch (Exception ex)
                 {
                     ViewBag.Message = ex.Message;
-
-                    ;
                 }
             return RedirectToAction("Index");
 
