@@ -42,5 +42,7 @@ namespace Spedizioni.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [ValidateCurrentDate(ErrorMessage = "La data dev'essere maggiore o uguale a quella odierna.")]
         public DateTime dataConsegna { get; set; }
+
+        public int IdStatoSpedizione { get; set; }
     }
 }

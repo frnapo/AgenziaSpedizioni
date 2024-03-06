@@ -12,34 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IdSpedizione)
+            Citta Destinazione
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IdCliente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codTracciamento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dataSpedizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pesoSpedizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cittaDestinazione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.indirizzoDestinazione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nominativoDestinatario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.costoSpedizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dataConsegna)
+           Numero Spedizioni
         </th>
         <th></th>
     </tr>
@@ -47,34 +23,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IdSpedizione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdCliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codTracciamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataSpedizione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pesoSpedizione)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.cittaDestinazione)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.indirizzoDestinazione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nominativoDestinatario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.costoSpedizione)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataConsegna)
+            @Html.DisplayFor(modelItem => item.IdSpedizione)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

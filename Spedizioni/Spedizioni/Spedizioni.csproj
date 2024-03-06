@@ -188,6 +188,7 @@
     <Content Include="Views\Spedizioni\SpedizioniInCorso.cshtml" />
     <Content Include="Views\Spedizioni\SpedizioniPerCitta.cshtml" />
     <Content Include="Views\Spedizioni\InserisciSpedizione.cshtml" />
+    <Content Include="Views\Home\Tracking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

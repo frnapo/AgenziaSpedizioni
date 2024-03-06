@@ -41,6 +41,9 @@
         <th>
             @Html.DisplayNameFor(model => model.dataConsegna)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdStatoSpedizione)
+        </th>
         <th></th>
     </tr>
 
@@ -77,9 +80,18 @@
             @Html.DisplayFor(modelItem => item.dataConsegna)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @if (item.IdStatoSpedizione == 1)
+            {
+                <text>Partita</text>
+            }
+            else 
+            {
+                <text>In consegna</text>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("In Consegna", "InConsegna", new { id = item.IdSpedizione })
+            @Html.ActionLink("Consegnato", "Consegnato", new { id = item.IdSpedizione })
         </td>
     </tr>
 }
