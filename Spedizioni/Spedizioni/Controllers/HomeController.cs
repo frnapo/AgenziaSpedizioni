@@ -125,6 +125,7 @@ namespace Spedizioni.Controllers
                         s.cittaDestinazione = dr["cittaDestinazione"].ToString();
                         s.indirizzoDestinazione = dr["indirizzoDestinazione"].ToString();
                         s.nominativoDestinatario = dr["nominativoDestinatario"].ToString();
+                        s.IdStatoSpedizione = Convert.ToInt32(dr["FK_idStato"]);
                         s.costoSpedizione = Convert.ToDecimal(dr["costoSpedizione"]);
                         s.dataConsegna = Convert.ToDateTime(dr["dataConsegna"]);
 
